@@ -122,3 +122,154 @@ function createPublicationItem(title, url) {
   item.appendChild(a);
   return item;
 }
+
+function formatDateLong(isoDate) {
+  if (!isoDate) return "TBD";
+  const d = new Date(isoDate + "T12:00:00");
+  return d.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+}
+
+function formatDateRange(startIso, endIso) {
+  if (!startIso && !endIso) return "TBD";
+  if (startIso && !endIso) return formatDateLong(startIso);
+  if (!startIso && endIso) return formatDateLong(endIso);
+
+  const start = new Date(startIso + "T12:00:00");
+  const end = new Date(endIso + "T12:00:00");
+
+  const startTxt = start.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+  const endTxt = end.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+
+  return `${startTxt} → ${endTxt}`;
+}
+
+function daysUntil(isoDate) {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const d = new Date(isoDate + "T12:00:00");
+  d.setHours(0, 0, 0, 0);
+
+  const msPerDay = 24 * 60 * 60 * 1000;
+  return Math.round((d - today) / msPerDay);
+}
+
+function conferenceHasOccurred(conf) {
+  // Conference is considered "occurred" only after the last conference day has passed.
+  // If dateEnd exists, use that; else use dateStart; if neither exists, keep it.
+  const endIso = conf?.dateEnd || conf?.dateStart;
+  if (!endIso) return false;
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const end = new Date(endIso + "T12:00:00");
+  end.setHours(0, 0, 0, 0);
+
+  // Remove only if conference ended before today
+  return end < today;
+}
+
+export function renderConferences(conferences) {
+  const container = document.getElementById("conferencesContent");
+  if (!container) return;
+
+  container.innerHTML = "";
+
+  // --- Countdown widgets ---
+  const countdownBox = document.createElement("div");
+  countdownBox.className = "resources-box";
+  countdownBox.innerHTML = `
+    <h2>Deadlines</h2>
+    <div class="conference-grid" id="conferenceGrid"></div>
+  `;
+  container.appendChild(countdownBox);
+
+  const grid = countdownBox.querySelector("#conferenceGrid");
+
+  // Sort: upcoming deadlines first, then past, then TBD
+  const visible = [...(conferences || [])].filter((c) => !conferenceHasOccurred(c));
+
+  const sorted = visible.sort((a, b) => {
+    const ad = a.deadline ? new Date(a.deadline + "T12:00:00").getTime() : Infinity;
+    const bd = b.deadline ? new Date(b.deadline + "T12:00:00").getTime() : Infinity;
+    return ad - bd;
+  });
+
+  sorted.forEach((c) => {
+    const card = document.createElement("div");
+    card.className = "conference-card";
+
+    const name = c.name || "Unnamed";
+    const deadlineTxt = formatDateLong(c.deadline);
+    const hasDeadline = Boolean(c.deadline);
+
+    let countdownLine = "Deadline: TBD";
+    let countdownClass = "conference-countdown";
+
+    if (hasDeadline) {
+      const d = daysUntil(c.deadline);
+
+      if (d < 0) {
+        countdownLine = "Deadline passed";
+        countdownClass += " closed";
+      } else if (d === 0) {
+        countdownLine = "Deadline is today";
+      } else if (d === 1) {
+        countdownLine = "1 day to deadline";
+      } else {
+        countdownLine = `${d} days to deadline`;
+      }
+    }
+
+    card.innerHTML = `
+      <div class="conference-name">${name}</div>
+      <div class="conference-deadline">Deadline: ${deadlineTxt}</div>
+      <div class="${countdownClass}">${countdownLine}</div>
+    `;
+
+    grid.appendChild(card);
+  });
+
+  // --- Table ---
+  const tableBox = document.createElement("div");
+  tableBox.className = "news-box-full";
+  tableBox.innerHTML = `
+    <h2>Details</h2>
+    <div style="overflow-x:auto;">
+      <table class="conference-table">
+        <thead>
+          <tr>
+            <th>Conference</th>
+            <th>Deadline</th>
+            <th>Conference dates</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody id="conferenceTableBody"></tbody>
+      </table>
+    </div>
+  `;
+  container.appendChild(tableBox);
+
+  const tbody = tableBox.querySelector("#conferenceTableBody");
+
+  sorted.forEach((c) => {
+    const tr = document.createElement("tr");
+
+    const name = c.name || "";
+    const deadline = formatDateLong(c.deadline);
+    const dates = formatDateRange(c.dateStart, c.dateEnd);
+    const location = (c.location && c.location.trim()) ? c.location : "TBD";
+
+    tr.innerHTML = `
+      <td>${name}</td>
+      <td>${deadline}</td>
+      <td>${dates}</td>
+      <td>${location}</td>
+    `;
+
+    tbody.appendChild(tr);
+  });
+}
+
