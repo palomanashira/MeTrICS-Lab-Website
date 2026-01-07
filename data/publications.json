@@ -1,0 +1,41 @@
+{
+  "highlights": [
+    {
+      "title": "Motifs of brain cortical folding from birth to adulthood: structural asymmetry and folding-functional links",
+      "url": "https://www.biorxiv.org/content/10.1101/2025.03.04.641459v1"
+    },
+    {
+      "title": "Structural and functional asymmetry of the neonatal cerebral cortex",
+      "url": "https://www.nature.com/articles/s41562-023-01542-8"
+    },
+    {
+      "title": "Unsupervised multimodal surface registration with geometric deep learning",
+      "url": "https://www.sciencedirect.com/science/article/pii/S1361841525003676"
+    },
+    {
+      "title": "Distinguishing healthy ageing from dementia: A biomechanical simulation of brain atrophy using deep networks",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-030-87586-2_2"
+    },
+    {
+      "title": "MSM: A new flexible framework for Multimodal Surface Matching",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S1053811914004546?via%3Dihub"
+    }
+  ],
+  "byYear": {
+    "2025": [
+      {
+        "title": "PUUMA (Placental patch and whole-Uterus dual-branch U-Mamba-based Architecture): Functional MRI Prediction of Gestational Age at Birth and Preterm Risk",
+        "url": "https://arxiv.org/abs/2509.07042"
+      },
+      {
+        "title": "NEUBORN: The Neurodevelopmental Evolution framework Using BiOmechanical RemodelliNg",
+        "url": "https://www.arxiv.org/abs/2508.09757"
+      },
+      {
+        "title": "Motifs of brain cortical folding from birth to adulthood: structural asymmetry and folding-functional links",
+        "url": "https://www.biorxiv.org/content/10.1101/2025.03.04.641459v1"
+      }
+    ]
+  }
+}
+

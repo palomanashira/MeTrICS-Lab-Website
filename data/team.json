@@ -1,0 +1,95 @@
+{
+  "principalInvestigators": [
+    {
+      "name": "Emma C. Robinson",
+      "email": "emma.robinson@kcl.ac.uk",
+      "role": "Principal Investigator",
+      "photo": "photos/emma.jpeg"
+    }
+  ],
+  "postdoctoralResearchers": [
+    {
+      "name": "Irina Grigorescu",
+      "email": "irina.grigorescu@kcl.ac.uk",
+      "role": "Postdoctoral Researcher",
+      "photo": "photos/irina.jpeg"
+    },
+    {
+      "name": "Yourong Guo",
+      "email": "yourong.guo@kcl.ac.uk",
+      "role": "Postdoctoral Researcher",
+      "photo": "photos/yourong-face.jpg"
+    },
+    {
+      "name": "Davood Shahsavari",
+      "email": "davood.shahsavari@kcl.ac.uk",
+      "role": "Postdoctoral Researcher",
+      "photo": "photos/davood.jpg"
+    }
+  ],
+  "phdStudents": [
+    {
+      "name": "Nashira Baena",
+      "email": "nashira.baena@kcl.ac.uk",
+      "role": "PhD Student",
+      "photo": "photos/nashira.jpg"
+    },
+    {
+      "name": "Saga Masui",
+      "email": "saga.masui@kcl.ac.uk",
+      "role": "PhD Student",
+      "photo": "photos/saga.jpeg"
+    },
+    {
+      "name": "Shang Shi",
+      "email": "shang.1.shi@kcl.ac.uk",
+      "role": "PhD Student",
+      "initials": "SS"
+    },
+    {
+      "name": "Aakash Saboo",
+      "email": "aakash.saboo@kcl.ac.uk",
+      "role": "PhD Student",
+      "initials": "AS"
+    },
+    {
+      "name": "Jiaxin Xiao",
+      "email": "jiaxin.1.xiao@kcl.ac.uk",
+      "role": "PhD Student",
+      "photo": "photos/jiaxin.jpg"
+    },
+    {
+      "name": "Kaili Liang",
+      "email": "kaili.liang@kcl.ac.uk",
+      "role": "PhD Student",
+      "photo": "photos/kaili.jpg"
+    },
+    {
+      "name": "Diego Fajardo Rojas",
+      "email": "diego.fajardo_rojas@kcl.ac.uk",
+      "role": "PhD Student",
+      "photo": "photos/diego.jpg"
+    },
+    {
+      "name": "Levente Baljer",
+      "email": "levente.1.baljer@kcl.ac.uk",
+      "role": "PhD Student",
+      "photo": "photos/levi.jpg"
+    },
+    {
+      "name": "Ashleigh Davies",
+      "email": "ashleigh.davies@kcl.ac.uk",
+      "role": "PhD Student",
+      "photo": "photos/ash.jpg"
+    }
+  ],
+  "alumni": [
+    { "name": "Logan Williams", "role": "Alumni", "photo": "photos/logan.jpg" },
+    { "name": "Mariana Ferreira Teixeira Da Silva", "role": "Alumni", "photo": "photos/mariana.jpeg" },
+    { "name": "Simon Dahan", "role": "Alumni", "photo": "photos/simon.jpeg" },
+    { "name": "Mohamed Suliman", "role": "Alumni", "photo": "photos/mohamed.jpeg" },
+    { "name": "Renato Besenczi", "role": "Alumni", "photo": "photos/renato.jpeg" },
+    { "name": "Cher Bass", "role": "Alumni", "photo": "photos/cher.jpeg" },
+    { "name": "Abdulah Fawaz", "role": "Alumni", "photo": "photos/abdulah.jpeg" }
+  ]
+}
