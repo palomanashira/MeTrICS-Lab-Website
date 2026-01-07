@@ -33,6 +33,7 @@
                     <li><a href="#team" onclick="showPage('team')">Team</a></li>
                     <li><a href="#resources" onclick="showPage('resources')">Resources</a></li>
                     <li><a href="#publications" onclick="showPage('publications')">Publications</a></li>
+                    <li><a href="#conferences" onclick="showPage('conferences')">Conferences</a></li>
                     <li><a href="#contact" onclick="showPage('contact')">Contact</a></li>
                 </ul>
             </nav>
@@ -122,6 +123,17 @@
             </div>
         </div>
 
+        <!-- CONFERENCES PAGE -->
+        <div id="conferences" class="page">
+        <h1>Conferences</h1>
+
+        <!-- Filled automatically from data/conferences.json -->
+        <div id="conferencesContent">
+            <p class="no-events">Loading conferences...</p>
+        </div>
+        </div>
+
+
         <!-- CONTACT PAGE -->
         <div id="contact" class="page">
             <h1>Contact Us</h1>
@@ -186,4 +198,3 @@
     <script type="module" src="js/main.js"></script>
 </body>
 </html>
-
