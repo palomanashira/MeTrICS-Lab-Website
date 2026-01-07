@@ -1,6 +1,6 @@
 import { showPage } from "./pages.js";
 import { setEvents, initCalendar, previousMonth, nextMonth, showEvents } from "./calendar.js";
-import { renderTeam, renderPublications } from "./renderers.js";
+import { renderTeam, renderPublications, renderConferences } from "./renderers.js";
 
 // Expose functions globally because your HTML uses inline onclick/onsubmit
 window.showPage = showPage;
@@ -17,17 +17,20 @@ async function loadJSON(path) {
 
 async function init() {
   try {
-    const [eventsData, teamData, publicationsData] = await Promise.all([
-      loadJSON("data/events.json"),
-      loadJSON("data/team.json"),
-      loadJSON("data/publications.json"),
-    ]);
+    const [eventsData, teamData, publicationsData, conferencesData] = await Promise.all([
+    loadJSON("data/events.json"),
+    loadJSON("data/team.json"),
+    loadJSON("data/publications.json"),
+    loadJSON("data/conferences.json")
+  ]);
 
-    setEvents(eventsData);
-    initCalendar();
+  setEvents(eventsData);
+  initCalendar();
 
-    renderTeam(teamData);
-    renderPublications(publicationsData);
+  renderTeam(teamData);
+  renderPublications(publicationsData);
+  renderConferences(conferencesData);
+
   } catch (err) {
     console.error(err);
 
@@ -41,6 +44,10 @@ async function init() {
 
     const pubsEl = document.getElementById("publicationsContent");
     if (pubsEl) pubsEl.innerHTML = `<p class="no-events">Could not load publications data.</p>`;
+
+    const confEl = document.getElementById("conferencesContent");
+    if (confEl) confEl.innerHTML = `<p class="no-events">Could not load conferences data.</p>`;
+
   }
 }
 
