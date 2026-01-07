@@ -570,3 +570,74 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+/* ======================================== */
+/* 🔹 CONFERENCES PAGE */
+/* ======================================== */
+
+.conference-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.conference-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    border-top: 4px solid #ffb6c1;
+}
+
+.conference-name {
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 0.4rem;
+    font-size: 1.05rem;
+}
+
+.conference-deadline {
+    color: #d87093;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+}
+
+.conference-countdown {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.conference-countdown.closed {
+    color: #999;
+}
+
+.conference-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.conference-table th,
+.conference-table td {
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid #f0f0f0;
+    text-align: left;
+    vertical-align: top;
+}
+
+.conference-table th {
+    background: #fff0f3;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+.conference-table tr:last-child td {
+    border-bottom: none;
+}
+
