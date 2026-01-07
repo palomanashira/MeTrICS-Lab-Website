@@ -69,31 +69,36 @@ export function showUpcomingEvents() {
   today.setHours(0, 0, 0, 0);
 
   let html = "<h3>Upcoming Events</h3>";
-  let hasUpcoming = false;
+  let shown = 0;
 
-  const sortedDates = Object.keys(events).sort();
-  sortedDates.forEach((dateStr) => {
+  const sortedDates = Object.keys(events).sort(); // YYYY-MM-DD sorts correctly
+
+  for (const dateStr of sortedDates) {
     const eventDate = new Date(dateStr + "T12:00:00");
-    if (eventDate >= today) {
-      hasUpcoming = true;
-      const dayOfWeek = eventDate.toLocaleDateString("en-GB", { weekday: "long" });
-      const formattedDate = eventDate.toLocaleDateString("en-GB", {
-        day: "numeric",
-        month: "long",
-      });
+    if (eventDate < today) continue;
 
-      events[dateStr].forEach((event) => {
-        html += `
-          <div class="event-item">
-            <p class="date">${dayOfWeek}, ${formattedDate} - ${event.time}</p>
-            <p>${event.title}</p>
-          </div>
-        `;
-      });
+    const dayOfWeek = eventDate.toLocaleDateString("en-GB", { weekday: "long" });
+    const formattedDate = eventDate.toLocaleDateString("en-GB", {
+      day: "numeric",
+      month: "long",
+    });
+
+    for (const event of (events[dateStr] || [])) {
+      html += `
+        <div class="event-item">
+          <p class="date">${dayOfWeek}, ${formattedDate} - ${event.time}</p>
+          <p>${event.title}</p>
+        </div>
+      `;
+
+      shown += 1;
+      if (shown >= 5) break;
     }
-  });
 
-  if (!hasUpcoming) {
+    if (shown >= 5) break;
+  }
+
+  if (shown === 0) {
     html += '<p class="no-events">No upcoming events</p>';
   }
 
@@ -151,3 +156,4 @@ function renderCalendar() {
 
   calendarGrid.innerHTML = html;
 }
+
