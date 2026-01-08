@@ -84,8 +84,7 @@
     { "name": "Mohamed Suliman", "role": "Alumni", "photo": "photos/mohamed.jpeg" },
     { "name": "Renato Besenczi", "role": "Alumni", "photo": "photos/renato.jpeg" },
     { "name": "Cher Bass", "role": "Alumni", "photo": "photos/cher.jpeg" },
-    { "name": "Abdulah Fawaz", "role": "Alumni", "photo": "photos/abdulah.jpeg" }
-    {"name": "Diego Fajardo Rojas", "role": "Alumni", "photo": "photos/diego.jpg"
-    },
+    { "name": "Abdulah Fawaz", "role": "Alumni", "photo": "photos/abdulah.jpeg" },
+    {"name": "Diego Fajardo Rojas", "role": "Alumni", "photo": "photos/diego.jpg"}
   ]
 }
