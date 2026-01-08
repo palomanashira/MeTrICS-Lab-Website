@@ -65,12 +65,6 @@
       "photo": "photos/kaili.jpg"
     },
     {
-      "name": "Diego Fajardo Rojas",
-      "email": "diego.fajardo_rojas@kcl.ac.uk",
-      "role": "PhD Student",
-      "photo": "photos/diego.jpg"
-    },
-    {
       "name": "Levente Baljer",
       "email": "levente.1.baljer@kcl.ac.uk",
       "role": "PhD Student",
@@ -91,5 +85,7 @@
     { "name": "Renato Besenczi", "role": "Alumni", "photo": "photos/renato.jpeg" },
     { "name": "Cher Bass", "role": "Alumni", "photo": "photos/cher.jpeg" },
     { "name": "Abdulah Fawaz", "role": "Alumni", "photo": "photos/abdulah.jpeg" }
+    {"name": "Diego Fajardo Rojas", "role": "Alumni", "photo": "photos/diego.jpg"
+    },
   ]
 }
