@@ -68,23 +68,23 @@
       "name": "Levente Baljer",
       "email": "levente.1.baljer@kcl.ac.uk",
       "role": "PhD Student",
-      "photo": "photos/levi.jpg"
+      "initials": "LB"
     },
     {
       "name": "Ashleigh Davies",
       "email": "ashleigh.davies@kcl.ac.uk",
       "role": "PhD Student",
-      "photo": "photos/ash.jpg"
+      "initials": "AD"
     }
   ],
   "alumni": [
-    { "name": "Logan Williams", "role": "Alumni", "photo": "photos/logan.jpg" },
-    { "name": "Mariana Ferreira Teixeira Da Silva", "role": "Alumni", "photo": "photos/mariana.jpeg" },
-    { "name": "Simon Dahan", "role": "Alumni", "photo": "photos/simon.jpeg" },
-    { "name": "Mohamed Suliman", "role": "Alumni", "photo": "photos/mohamed.jpeg" },
-    { "name": "Renato Besenczi", "role": "Alumni", "photo": "photos/renato.jpeg" },
-    { "name": "Cher Bass", "role": "Alumni", "photo": "photos/cher.jpeg" },
-    { "name": "Abdulah Fawaz", "role": "Alumni", "photo": "photos/abdulah.jpeg" },
-    {"name": "Diego Fajardo Rojas", "role": "Alumni", "photo": "photos/diego.jpg"}
+    { "name": "Logan Williams", "role": "Alumni", "initials": "LW" },
+    { "name": "Mariana Ferreira Teixeira Da Silva", "role": "Alumni", "initials": "MS" },
+    { "name": "Simon Dahan", "role": "Alumni", "initials": "SD" },
+    { "name": "Mohamed Suliman", "role": "Alumni", "initials": "MS" },
+    { "name": "Renato Besenczi", "role": "Alumni", "initials": "RB" },
+    { "name": "Cher Bass", "role": "Alumni", "initials": "CB" },
+    { "name": "Abdulah Fawaz", "role": "Alumni", "initials": "AF" },
+    {"name": "Diego Fajardo Rojas", "role": "PhD Student", "initials": "DFR"}
   ]
 }
