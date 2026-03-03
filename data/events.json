@@ -12,7 +12,11 @@
     { "time": "3-5pm", "title": "Educational Tutorial Series: by Hector Zenil (Topic - TBD)" }
   ],
   "2026-03-20": [
-    { "time": "3-5pm", "title": "Educational Tutorial Series: by Konrad Wagstyl (Topic - TBD)" }
+    {
+      "time": "3-5pm",
+      "title": "Explainability for biomedical AI: Konrad Wagstyl, Jack Highton and Mathilde Ripart",
+      "abstract": "Integrating complex AI models into clinical and biomedical research has led to substantial performance gains. However, with increased model complexity comes reduced interpretability which can hamper clinical integration and limit scientific insight. The field of Explainable AI has developed numerous architecture-specific and model-agnostic methods to tackle this problem, with mixed results.\n\nIn this session we will:\n- review commonly used methods for trying to understand why AI models make particular decisions\n- share a couple examples of how our group uses applies these methods in our research and for clinician-facing tools\n- finish with a short debate on: do we need explainability at all?"
+    }
   ],
   "2026-04-17": [
     { "time": "3-5pm", "title": "Educational Tutorial Series: by Michela Antonelli (Topic - TBD)" }
