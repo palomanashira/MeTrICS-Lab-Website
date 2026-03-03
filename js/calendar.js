@@ -49,6 +49,7 @@ export function showEvents(dateStr) {
         <div class="event-item">
           <p class="date">${event.time}</p>
           <p>${event.title}</p>
+          ${event.abstract ? `<p class="event-abstract">${event.abstract}</p>` : ""}
         </div>
       `;
     });
